@@ -545,6 +545,14 @@
 			</div>
 		</div>
 	</div>
+	<!-- 视频 -->
+	<div id="video" class="videoblock">
+		<div class="colsevideo"><img src="./images/closebtn.png" alt=""></div>
+		<video id="myVideo" width="1000" height="600" controls="controls" autoplay>
+			<source src="http://vjs.zencdn.net/v/oceans.mp4"  type="video/mp4">
+			您的浏览器不支持 HTML5 video 标签。
+		</video>
+	</div>
 
 	<!-- js 文件 -->
 	<script src="js/jquery.min.js"></script>
@@ -577,7 +585,15 @@
 					})
 				}
 			});
-		});         
+		});  
+		$('.btnplay').on('click', function () {
+			$('#video').show();
+			$('#myVideo')[0].play();
+        });      
+		$('.colsevideo').on('click', function () {
+			$('#myVideo')[0].pause();
+			$('#video').hide();
+        });      
 	</script>
 </body>
 
